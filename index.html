@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/header.css">
+    <link rel="stylesheet" href="asset/css/feature.css">
+    <link rel="stylesheet" href="asset/css/right.css">
+    <link rel="stylesheet" href="asset/css/row.css">
+    <link rel="stylesheet" href="asset/css/footer.css">
+    <link rel="stylesheet" href="asset/css/firstrow.css">
+    <link rel="stylesheet" href="asset/css/trial.css">
+</head>
+<body>
+<div class="background-container">
+  <div id="header"></div>
+  <div class="background-container-flex">
+    <div id="feature"></div>
+    <div id="right"></div>
+  </div>
+  <div id="firstrow"></div>
+  <div id="trial"></div>
+  <div id="secondrow"></div>
+  <div id="thirdrow"></div>
+  <div id="fourthrow"></div>
+  <div id="footer"></div>
+</div>
+
+  <script>
+    async function loadComponent(id, path) {
+      const response = await fetch(path);
+      const html = await response.text();
+      document.getElementById(id).innerHTML = html;
+    }
+
+    loadComponent("header", "components/header.html");
+    loadComponent("feature", "components/feature.html");
+    loadComponent("right", "components/right.html");
+    loadComponent("firstrow", "components/firstrow.html");
+    loadComponent("trial", "components/trial.html");
+    loadComponent("secondrow", "components/secondrow.html");
+    loadComponent("thirdrow", "components/thirdrow.html");
+    loadComponent("fourthrow", "components/fourthrow.html");
+    loadComponent("footer", "components/footer.html");
+  </script>
+</body>
+
+</html>
